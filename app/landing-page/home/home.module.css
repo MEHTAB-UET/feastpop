@@ -195,6 +195,29 @@
     padding-top: 100px;
   }
 
+  /* Restaurant Banner Mobile */
+  .restaurantBanner {
+    padding: 3rem 1rem;
+  }
+
+  .bannerContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .bannerTitle {
+    font-size: 2rem;
+  }
+
+  .bannerDescription {
+    font-size: 1rem;
+  }
+
+  .bannerImage img {
+    max-width: 300px;
+  }
+
   .heroTitle {
     font-size: 2rem;
   }
@@ -253,6 +276,28 @@
     padding-top: 80px;
   }
 
+  /* Restaurant Banner Small Mobile */
+  .restaurantBanner {
+    padding: 2rem 0.5rem;
+  }
+
+  .bannerTitle {
+    font-size: 1.5rem;
+  }
+
+  .bannerDescription {
+    font-size: 0.875rem;
+  }
+
+  .exploreButton {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .bannerImage img {
+    max-width: 250px;
+  }
+
   .heroTitle {
     font-size: 1.5rem;
   }
@@ -299,11 +344,102 @@
   }
 }
 
+/* Restaurant Banner Section */
+.restaurantBanner {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #99422a 0%, #fc6d45 100%);
+  position: relative;
+}
+
+/* Banner Spacing */
+.bannerSpacing {
+  height: 4rem;
+  background: #fff1e8;
+}
+
+.restaurantBanner::before,
+.restaurantBanner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #f5f5dc;
+}
+
+.restaurantBanner::before {
+  top: 0;
+}
+
+.restaurantBanner::after {
+  bottom: 0;
+}
+
+.bannerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.bannerText {
+  color: white;
+}
+
+.bannerTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.bannerDescription {
+  font-size: 1.125rem;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.exploreButton {
+  background: #6b1941;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exploreButton:hover {
+  background: #5a1536;
+}
+
+.bannerImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerImage img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 /* Events & Places Sections */
 .eventsSection,
-.placesSection {
+.placesSection,
+.localGroupsSection {
   padding: 4rem 2rem;
-  background: #fafafa;
+  background: rgb(255, 241, 232);
 }
 
 .sectionHeader {

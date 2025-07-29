@@ -1,0 +1,244 @@
+/* Local Group Card Container */
+.localGroupCard {
+  background: rgb(255, 247, 242);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.localGroupCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header - Dark Section */
+.cardHeader {
+  background: #1a202c;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  min-height: 180px;
+}
+
+.cardHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.1) 0%,
+    rgba(16, 185, 129, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Logo Section */
+.logoSection {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.hexagon {
+  width: 24px;
+  height: 24px;
+  background: #22c55e;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.logoText {
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.meetupTag {
+  background: #22c55e;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.locationTitle {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card Content - Light Section */
+.cardContent {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgb(255, 247, 242);
+}
+
+.groupInfo {
+  margin-bottom: 1rem;
+}
+
+.groupName {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.3;
+}
+
+.creatorName {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Card Details */
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.locationIcon,
+.membersIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.locationImage {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.detailButton,
+.joinButton {
+  flex: 1;
+  background: #6b1941;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detailButton:hover,
+.joinButton:hover {
+  background: #5a1536;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .localGroupCard {
+    height: 380px;
+  }
+
+  .cardHeader {
+    padding: 1rem;
+    min-height: 160px;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .groupName {
+    font-size: 1rem;
+  }
+
+  .locationTitle {
+    font-size: 1.25rem;
+  }
+
+  .actionButtons {
+    gap: 0.5rem;
+  }
+
+  .detailButton,
+  .joinButton {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .localGroupCard {
+    height: 350px;
+  }
+
+  .cardHeader {
+    min-height: 140px;
+  }
+
+  .cardContent {
+    padding: 0.875rem;
+  }
+
+  .groupName {
+    font-size: 0.875rem;
+  }
+
+  .detailItem {
+    font-size: 0.8rem;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

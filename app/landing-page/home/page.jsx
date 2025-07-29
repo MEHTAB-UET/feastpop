@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./home.module.css";
 import EventCard from "../../components/eventcard/page";
 import PlacesCard from "../../components/placescard/page";
+import LocalGroupCard from "../../components/localgroupcard/page";
 
 const home = () => {
   return (
@@ -170,6 +171,14 @@ const home = () => {
           <EventCard
             title="Dummy Event Name"
             subtitle="Restaurant Name"
+            image="/assets/homepage/topevents/5.png"
+            location="47 W 13th St, New York, NY 10011, Dubai"
+            date="12 April, 2025"
+            buttonText="Active"
+          />
+          <EventCard
+            title="Dummy Event Name"
+            subtitle="Restaurant Name"
             image="/assets/homepage/topevents/1.png"
             location="47 W 13th St, New York, NY 10011, Dubai"
             date="12 April, 2025"
@@ -178,15 +187,7 @@ const home = () => {
           <EventCard
             title="Dummy Event Name"
             subtitle="Restaurant Name"
-            image="/assets/homepage/topevents/2.png"
-            location="47 W 13th St, New York, NY 10011, Dubai"
-            date="12 April, 2025"
-            buttonText="Active"
-          />
-          <EventCard
-            title="Dummy Event Name"
-            subtitle="Restaurant Name"
-            image="/assets/homepage/topevents/3.png"
+            image="/assets/homepage/topevents/5.png"
             location="47 W 13th St, New York, NY 10011, Dubai"
             date="12 April, 2025"
             buttonText="Active"
@@ -208,22 +209,90 @@ const home = () => {
             title="Dummy Restaurant Name"
             image="/assets/homepage/topevents/4.png"
             location="47 W 13th St, New York, NY 10011, Dubai"
-            restaurantType="Type : Live Music | Happy Hours"
+            restaurantType={
+              <>
+                <strong>Type</strong> : Live Music | Happy Hours
+              </>
+            }
           />
           <PlacesCard
             title="Dummy Restaurant Name"
-            image="/assets/homepage/topevents/5.png"
+            image="/assets/homepage/topevents/2.png"
             location="47 W 13th St, New York, NY 10011, Dubai"
-            restaurantType="Type : Live Music | Happy Hours"
+            restaurantType={
+              <>
+                <strong>Type</strong> : Live Music | Happy Hours
+              </>
+            }
           />
           <PlacesCard
             title="Dummy Restaurant Name"
-            image="/assets/homepage/topevents/1.png"
+            image="/assets/homepage/topevents/3.png"
             location="47 W 13th St, New York, NY 10011, Dubai"
-            restaurantType="Type : Live Music | Happy Hours"
+            restaurantType={
+              <>
+                <strong>Type</strong> : Live Music | Happy Hours
+              </>
+            }
           />
         </div>
       </div>
+
+      {/* Local Groups Section */}
+      <div className={styles.localGroupsSection}>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>Local Groups</h2>
+          <a href="#" className={styles.seeAllLink}>
+            See All
+          </a>
+        </div>
+        <div className={styles.cardsGrid}>
+          <LocalGroupCard
+            groupName="Dummy Group Name"
+            creatorName="Creator Name"
+            location="47 W 13th St, New York, NY 10011, Dubai"
+            members={129}
+          />
+          <LocalGroupCard
+            groupName="Dummy Group Name"
+            creatorName="Creator Name"
+            location="47 W 13th St, New York, NY 10011, Dubai"
+            members={129}
+          />
+          <LocalGroupCard
+            groupName="Dummy Group Name"
+            creatorName="Creator Name"
+            location="47 W 13th St, New York, NY 10011, Dubai"
+            members={129}
+          />
+        </div>
+      </div>
+
+      {/* Restaurant Banner Section */}
+      <div className={styles.restaurantBanner}>
+        <div className={styles.bannerContent}>
+          <div className={styles.bannerText}>
+            <h2 className={styles.bannerTitle}>
+              Fresh sourdough at 6am at Mikey's restaurant
+            </h2>
+            <p className={styles.bannerDescription}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              fermentum, sapien nec malesuada convallis, tellus lectus porta
+              justo, nec pretium nisi neque non orci
+            </p>
+            <button className={styles.exploreButton}>EXPLORE RESTAURANT</button>
+          </div>
+          <div className={styles.bannerImage}>
+            <img
+              src="/assets/homepage/topevents/3.png"
+              alt="Restaurant Interior"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Spacing Div */}
+      <div className={styles.bannerSpacing}></div>
     </>
   );
 };
