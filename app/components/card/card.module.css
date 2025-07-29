@@ -1,0 +1,213 @@
+/* Card Container */
+.card {
+  /* width: 440px; */
+  height: 420px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.cardImage {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.05);
+}
+
+/* Favorite Button */
+.favoriteButton {
+  background: transparent;
+  border: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6b7280;
+  padding: 0;
+}
+
+.favoriteButton:hover {
+  background: white;
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.favoriteButton.favorited {
+  color: #ef4444;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cardSubtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0 0 1rem 0;
+  /* background-color: red; */
+}
+
+/* Card Details */
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.detailItem svg {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.locationIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.restaurantType {
+  color: #6b1941;
+  font-weight: 500;
+}
+
+/* Card Button */
+.cardButton {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cardButton.primary {
+  background: #10b981;
+  color: white;
+}
+
+.cardButton.primary:hover {
+  background: #059669;
+}
+
+.cardButton.secondary {
+  background: #6b1941;
+  color: white;
+}
+
+.cardButton.secondary:hover {
+  background: #5a1536;
+}
+
+.cardButton.primary {
+  background: #10b981;
+  color: white;
+}
+
+.cardButton.primary:hover {
+  background: #059669;
+}
+
+.cardButton.outline {
+  background: transparent;
+  color: #6b1941;
+  border: 2px solid #6b1941;
+}
+
+.cardButton.outline:hover {
+  background: #6b1941;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+
+  .cardDetails {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .detailItem {
+    font-size: 0.8rem;
+  }
+
+  .cardButton {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardImage {
+    height: 160px;
+  }
+
+  .cardContent {
+    padding: 0.875rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .detailItem {
+    font-size: 0.75rem;
+  }
+}

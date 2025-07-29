@@ -1,0 +1,282 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem 2rem;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Right side container for dropdown and button */
+.navbarRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ff6b35;
+}
+
+/* .logoIcon {
+  display: flex;
+  align-items: center;
+} */
+
+.logoIcon img {
+  width: 30%;
+  height: 30%;
+  object-fit: contain;
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: #6b7280;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #6b1941;
+}
+
+.navLink.active {
+  color: #6b1941;
+}
+
+.navLink.active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background: #6b1941;
+  border-radius: 1px;
+}
+
+.navIcon {
+  font-size: 1.2rem;
+}
+
+.navText {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* City Dropdown */
+.cityDropdown {
+  position: relative;
+}
+
+.citySelect {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  color: #6b7280;
+  font-size: 0.875rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  min-width: 140px;
+}
+
+.citySelect:focus {
+  outline: none;
+  border-color: #6b1941;
+  box-shadow: 0 0 0 3px rgba(107, 25, 65, 0.1);
+}
+
+/* Login Button */
+.loginButton {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #6b1941;
+  border-radius: 8px;
+  background: white;
+  color: #6b1941;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+  background: #6b1941;
+  color: white;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
+.mobileMenuButton.hidden {
+  display: none !important;
+}
+
+.mobileMenuButton span {
+  width: 2rem;
+  height: 0.25rem;
+  background: #6b1941;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.mobileMenuButton span:first-child {
+  transform: rotate(0);
+}
+
+.mobileMenuButton span:nth-child(2) {
+  opacity: 1;
+}
+
+.mobileMenuButton span:nth-child(3) {
+  transform: rotate(0);
+}
+
+/* Mobile Overlay */
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem 1rem;
+    margin: 0;
+    border-radius: 0;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .navbar.mobileOpen {
+    left: 0;
+  }
+
+  .mobileMenuButton {
+    display: flex;
+  }
+
+  .mobileOverlay {
+    display: block;
+  }
+
+  .logo {
+    margin-bottom: 2rem;
+    align-self: center;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .navLink {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+
+  .navLink.active::after {
+    display: none;
+  }
+
+  .navLink.active {
+    background: rgba(107, 25, 65, 0.1);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+  }
+
+  .cityDropdown {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .citySelect {
+    width: 100%;
+  }
+
+  .loginButton {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Mobile menu button animation */
+  .mobileMenuButton.active span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .mobileMenuButton.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobileMenuButton.active span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: 100%;
+  }
+}
