@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./home.module.css";
-import EventCard from "../../components/eventcard/page";
-import PlacesCard from "../../components/placescard/page";
-import LocalGroupCard from "../../components/localgroupcard/page";
+import EventCard from "../../components/eventcard/EventCard";
+import PlacesCard from "../../components/placescard/PlacesCard";
+import LocalGroupCard from "../../components/localgroupcard/LocalGroupCard";
 
 const home = () => {
   return (
