@@ -173,16 +173,25 @@ const Navbar = () => {
         <div className={styles.mobileOverlay} onClick={toggleMobileMenu} />
       )}
 
-      {/* Mobile Menu Button */}
+      {/* Mobile Sidebar Button - Left Side */}
       <button
-        className={`${styles.mobileMenuButton} ${
-          isMobileMenuOpen ? styles.hidden : ""
+        className={`${styles.mobileSidebarButton} ${
+          isMobileMenuOpen ? styles.active : ""
         }`}
         onClick={toggleMobileMenu}
       >
         <span></span>
         <span></span>
         <span></span>
+      </button>
+
+      {/* Mobile Login Button - Right Side */}
+      <button
+        className={`${styles.mobileLoginButton} ${
+          isMobileMenuOpen ? styles.hidden : ""
+        }`}
+      >
+        Login
       </button>
 
       {/* Navbar */}

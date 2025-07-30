@@ -131,8 +131,8 @@
   color: white;
 }
 
-/* Mobile Menu Button */
-.mobileMenuButton {
+/* Mobile Sidebar Button - Left Side */
+.mobileSidebarButton {
   display: none;
   flex-direction: column;
   justify-content: space-around;
@@ -148,11 +148,7 @@
   left: 1rem;
 }
 
-.mobileMenuButton.hidden {
-  display: none !important;
-}
-
-.mobileMenuButton span {
+.mobileSidebarButton span {
   width: 2rem;
   height: 0.25rem;
   background: #6b1941;
@@ -162,16 +158,39 @@
   transform-origin: 1px;
 }
 
-.mobileMenuButton span:first-child {
+.mobileSidebarButton span:first-child {
   transform: rotate(0);
 }
 
-.mobileMenuButton span:nth-child(2) {
+.mobileSidebarButton span:nth-child(2) {
   opacity: 1;
 }
 
-.mobileMenuButton span:nth-child(3) {
+.mobileSidebarButton span:nth-child(3) {
   transform: rotate(0);
+}
+
+/* Mobile Login Button - Right Side */
+.mobileLoginButton {
+  display: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #6b1941;
+  border-radius: 8px;
+  background: white;
+  color: #6b1941;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+.mobileLoginButton:hover {
+  background: #6b1941;
+  color: white;
 }
 
 /* Mobile Overlay */
@@ -208,8 +227,16 @@
     left: 0;
   }
 
-  .mobileMenuButton {
+  .mobileSidebarButton {
     display: flex;
+  }
+
+  .mobileLoginButton {
+    display: block;
+  }
+
+  .mobileLoginButton.hidden {
+    display: none !important;
   }
 
   .mobileOverlay {
@@ -219,6 +246,7 @@
   .logo {
     margin-bottom: 2rem;
     align-self: center;
+    margin-top: 3rem;
   }
 
   .navLinks {
@@ -262,15 +290,15 @@
   }
 
   /* Mobile menu button animation */
-  .mobileMenuButton.active span:first-child {
+  .mobileSidebarButton.active span:first-child {
     transform: rotate(45deg);
   }
 
-  .mobileMenuButton.active span:nth-child(2) {
+  .mobileSidebarButton.active span:nth-child(2) {
     opacity: 0;
   }
 
-  .mobileMenuButton.active span:nth-child(3) {
+  .mobileSidebarButton.active span:nth-child(3) {
     transform: rotate(-45deg);
   }
 }
@@ -278,5 +306,17 @@
 @media (max-width: 480px) {
   .navbar {
     width: 100%;
+  }
+
+  .mobileSidebarButton {
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .mobileLoginButton {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
   }
 }
